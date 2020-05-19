@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 import feedparser
 from datetime import datetime
-
+from django.views.decorators.csrf import csrf_exempt
 
 # Create your views here.
 def index(request):
@@ -10,6 +10,8 @@ def index(request):
     return render(request, "index.html")
 
 
+
+@csrf_exempt
 def home(request):
     parsed_entries = []
     feed_url = ''
