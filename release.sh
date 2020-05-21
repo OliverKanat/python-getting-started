@@ -1,2 +1,1 @@
-wget --keep-session-cookies --save-cookies cookies.txt https://rsskanat.herokuapp.com/
-cat cookies.txt | tail -n 1 | rev | cut -d$'\t' -f1 | rev
+wget -O ./staticfiles/index.html  --post-data="rss_feed=https://www.sme.sk/rss-title&sort=asc" https://rsskanat.herokuapp.com/
